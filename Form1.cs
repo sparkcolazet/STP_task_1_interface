@@ -15,34 +15,7 @@ namespace STP_task_1_interface
 		public Form1()
 		{
 			InitializeComponent();
-            Console.WriteLine("Input the argument x");
-            double x = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Input number of items");
-            int n = Convert.ToInt32(Console.ReadLine());
-            double func = Math.Log(1 - x);
-            double d = Math.Abs(func - Sum(x, n)); //абсолютная прогрешность между разложением и функцией
-
-            Console.WriteLine("Value of Math function");
-            Console.WriteLine(func);
-            Console.WriteLine("Value of Taylor series");
-            Console.WriteLine(Sum(x, n));
-            Console.WriteLine("Value of difference");
-            Console.WriteLine(d);
-
-            Console.WriteLine("Input the argument x");
-
-            x = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Input the argument e");
-            double E = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Value of sum terms that are bigger than e");
-            Console.WriteLine(FindSum(x, E));
-            Console.WriteLine("Quantity of those terms");
-            Console.WriteLine(FindTerm(x, E));
-            Console.WriteLine("Value of sum terms that are bigger than e * 10");
-            Console.WriteLine(FindSum(x, E * 10));
-            Console.WriteLine("Quantity of those terms with e * 10");
-            Console.WriteLine(FindTerm(x, E * 10));
+            
         }
 
 		
@@ -102,8 +75,8 @@ namespace STP_task_1_interface
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-            double x = double.Parse(textBox1.Text);
-            int n = int.Parse(textBox2.Text);
+            double x = double.Parse(textBox1.Text.Replace('.', ','));
+            int n = int.Parse(textBox2.Text.Replace('.', ','));
 
             double func = Math.Log(1 - x);
             label5.Text = "Value of Math function " + func;
@@ -117,8 +90,8 @@ namespace STP_task_1_interface
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-            double x = double.Parse(textBox4.Text);
-            double E = double.Parse(textBox5.Text);
+            double x = double.Parse(textBox4.Text.Replace('.', ','));
+            double E = double.Parse(textBox5.Text.Replace('.', ','));
 
             label8.Text = "Value of sum terms that are bigger than e " + FindSum(x, E);
 
